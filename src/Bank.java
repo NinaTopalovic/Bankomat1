@@ -11,7 +11,7 @@ ArrayList<Account> listOfAccounts=new ArrayList<>();
 		int size=listOfAccounts.size();
 		
 		if(size==0) {
-			account.setIdOfAccount(0);
+			account.setIdOfAccount(100);
 			account.setAmount(0.0);
 			listOfAccounts.add(account);
 		}
@@ -75,7 +75,6 @@ ArrayList<Account> listOfAccounts=new ArrayList<>();
 	public void deposit(int targetAccount, double amount) {
 		
 		int size=listOfAccounts.size();
-	
 		for(int i=0; i<size; i++) {
 			Account account=listOfAccounts.get(i);
 			if(targetAccount==account.getIdOfAccount()) {
@@ -84,16 +83,18 @@ ArrayList<Account> listOfAccounts=new ArrayList<>();
 		
 	}
 	}
-	public void information() {
+	public void information(String name) {
 		int size=listOfAccounts.size();
 		for(int i=0; i<size; i++) {
 			Account account=listOfAccounts.get(i);
-			System.out.println(i+1 + ". racun:");
+			if(account.getUser().equals(name)) {
+			
 			System.out.println();
 			System.out.println("Broj racuna: " + account.getIdOfAccount());
 			System.out.println("Vlasnik racuna: " + account.getUser());
 		    System.out.println("Iznos na racunu: " + account.getAmount());
 		    System.out.println();
+			}
 		}
 		
 	}

@@ -15,18 +15,18 @@ public class Test {
 		System.out.print("1. Kreiraj racun \t");
 		System.out.print("2. Transfer novca \t");
 		System.out.print("3. Uplata novca \t");
-		System.out.print("4. Informacije o racunima \t");
+		System.out.print("4. Informacije o racunu \t");
 		System.out.println("5. Izlaz");
 		System.out.println();
 		System.out.print("Koju opciju zelite izabrati: ");
 
-		
+		int user=input.nextInt();
 		input.nextLine();
 	
 		for(int i=0; i<100000; i++) {
 			
 			
-		int user=input.nextInt();
+
 		
 		if(user==1) {
 			System.out.print("Unesite svoje ime: ");
@@ -74,7 +74,9 @@ public class Test {
 			
 		}
 		else if(user==4) {
-			bank.information();
+			System.out.println("Unesite ime korisnika racuna: ");
+			String name=input.nextLine();
+			bank.information(name);
 			break;
 			
 		}
